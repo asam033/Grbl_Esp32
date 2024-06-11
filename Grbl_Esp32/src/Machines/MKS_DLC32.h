@@ -135,3 +135,10 @@
 // #define DEFAULT_HOMING_CYCLE_0      bit(Z_AXIS)
 // #define DEFAULT_HOMING_CYCLE_1      bit(X_AXIS | Y_AXIS)
 
+/* SD卡配置 */
+#define GRBL_SPI_SS     GPIO_NUM_15
+#define GRBL_SPI_MOSI   GPIO_NUM_13
+#define GRBL_SPI_MISO   GPIO_NUM_12
+#define GRBL_SPI_SCK    GPIO_NUM_14
+#define GRBL_SPI_FREQ   4000000
+#define SDCARD_DET_PIN  GPIO_NUM_39
