@@ -7,6 +7,9 @@
 // You can override these by defining them in a board file.
 // To override, you must set all of them
 //-1 means use the default board pin
+//你可以通过在自己的机器文件中定义它们来覆盖它们。
+//要重写，你必须设置所有的
+//-1表示使用默认板引脚
     #    define GRBL_SPI_SS -1
     #    define GRBL_SPI_MOSI -1
     #    define GRBL_SPI_MISO -1

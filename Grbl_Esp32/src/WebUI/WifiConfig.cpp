@@ -291,6 +291,8 @@ namespace WebUI {
         WiFi.setHostname(h.c_str());
         //SSID
         String SSID = wifi_sta_ssid->get();
+        printf("SSID:%s \n", SSID.c_str());
+        printf("Sta/SSID_HEX:%X\r", SSID.c_str()); 
         if (SSID.length() == 0) {
             SSID = DEFAULT_STA_SSID;
         }

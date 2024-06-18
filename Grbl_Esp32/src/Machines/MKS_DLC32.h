@@ -142,3 +142,21 @@
 #define GRBL_SPI_SCK    GPIO_NUM_14
 #define GRBL_SPI_FREQ   4000000
 #define SDCARD_DET_PIN  GPIO_NUM_39
+
+/* WIFI */
+// 连接本地AP的凭证
+extern char g_Array_SSID[];
+#define CONNECT_TO_SSID     "GRBL_1测试"  
+#define SSID_PASSWORD       "12345678202"
+// #define CONNECT_TO_SSID     "changlang"
+// #define SSID_PASSWORD       "changlang"
+
+/* 作为AP时，SSID多语言测试 */
+// #define DEFAULT_AP_SSID        "GRBL_ESP_测试"         // SSID中文测试
+// #define DEFAULT_AP_SSID        "GRBL_ESP_испытание"    // SSID俄文测试
+// #define DEFAULT_AP_SSID        "GRBL_ESP_テスト"       // SSID日文测试
+#define DEFAULT_AP_SSID        "GRBL_ESP_测пытаスト"       // SSID混合测试
+/* SSID特殊字符测试 */
+// #define DEFAULT_AP_SSID        "GRBL_ESP_*@#￥"   
+
+#define DEFAULT_AP_PWD         "12345678"

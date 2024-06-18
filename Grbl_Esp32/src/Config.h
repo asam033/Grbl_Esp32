@@ -92,7 +92,8 @@ const int MAX_N_AXIS = 6;
 // serial monitor, sender, etc uses a different value than 115200
 #define BAUD_RATE 115200
 
-//Connect to your local AP with these credentials
+//Connect to your local AP with these credentials  
+//使用这些凭据连接到本地AP  
 //#define CONNECT_TO_SSID  "your SSID"
 //#define SSID_PASSWORD  "your SSID password"
 //CONFIGURE_EYECATCH_BEGIN (DO NOT MODIFY THIS LINE)

@@ -41,18 +41,18 @@ namespace WebUI {
 
     //defaults values
     static const char* DEFAULT_HOSTNAME = "grblesp";
-#ifdef CONNECT_TO_SSID
+#ifdef CONNECT_TO_SSID          // 使用STA模式，连接AP
     static const char* DEFAULT_STA_SSID = CONNECT_TO_SSID;
     static const char* DEFAULT_STA_PWD  = SSID_PASSWORD;
-#else   //!CONNECT_TO_SSID
-    static const char* DEFAULT_STA_SSID = "GRBL_ESP";
+#else   //!CONNECT_TO_SSID      // 使用AP模式，被其他STA连接
+    static const char* DEFAULT_STA_SSID = "GRBL_ESP_STA";
     static const char* DEFAULT_STA_PWD  = "12345678";
 #endif  //CONNECT_TO_SSID
     static const char* DEFAULT_STA_IP            = "0.0.0.0";
     static const char* DEFAULT_STA_GW            = "0.0.0.0";
     static const char* DEFAULT_STA_MK            = "0.0.0.0";
-    static const char* DEFAULT_AP_SSID           = "GRBL_ESP";
-    static const char* DEFAULT_AP_PWD            = "12345678";
+    // static const char* DEFAULT_AP_SSID           = "GRBL_ESP_AP";      // ESP32作为AP时的SSID
+    // static const char* DEFAULT_AP_PWD            = "12345678";
     static const char* DEFAULT_AP_IP             = "192.168.0.1";
     static const char* DEFAULT_AP_MK             = "255.255.255.0";
     static const int   DEFAULT_AP_CHANNEL        = 1;

@@ -135,6 +135,7 @@ SDState get_sd_state(bool refresh) {
             sd_state = SDState::NotPresent;
             return sd_state;
             //no need to go further if SD detect is not correct
+            //如果SD检测不正确，则无需进一步操作
         }
     }
 
