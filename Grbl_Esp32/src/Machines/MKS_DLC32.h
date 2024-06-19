@@ -146,8 +146,8 @@
 /* WIFI */
 // 连接本地AP的凭证
 extern char g_Array_SSID[];
-#define CONNECT_TO_SSID     "GRBL_1测试"  
-#define SSID_PASSWORD       "12345678202"
+#define CONNECT_TO_SSID     "GRBL_测试"  
+#define SSID_PASSWORD       "changlang"
 // #define CONNECT_TO_SSID     "changlang"
 // #define SSID_PASSWORD       "changlang"
 

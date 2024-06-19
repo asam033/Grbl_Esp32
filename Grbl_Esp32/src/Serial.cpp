@@ -168,6 +168,8 @@ static uint8_t getClientChar(uint8_t* data) {
 
 // this task runs and checks for data on all interfaces
 // REaltime stuff is acted upon, then characters are added to the appropriate buffer
+//此任务在所有接口上运行和检查数据
+//实时执行内容，然后将字符添加到适当的缓冲区
 void clientCheckTask(void* pvParameters) {
     uint8_t            data = 0;
     uint8_t            client;  // who sent the data
@@ -176,15 +178,16 @@ void clientCheckTask(void* pvParameters) {
         while ((client = getClientChar(&data)) != CLIENT_ALL) {
             // Pick off realtime command characters directly from the serial stream. These characters are
             // not passed into the main buffer, but these set system state flag bits for realtime execution.
+            //直接从串行流中提取实时命令字符。这些字符没有传递到主缓冲区，但设置了用于实时执行的系统状态标志位。
             if (is_realtime_command(data)) {
                 execute_realtime_command(static_cast<Cmd>(data), client);
             } else {
 #if defined(ENABLE_SD_CARD)
                 if (get_sd_state(false) < SDState::Busy) {
 #endif  //ENABLE_SD_CARD
-                    vTaskEnterCritical(&myMutex);
+                    vTaskEnterCritical(&myMutex);       //进入临界资源，并上互斥锁
                     client_buffer[client].write(data);
-                    vTaskExitCritical(&myMutex);
+                    vTaskExitCritical(&myMutex);        //解锁
 #if defined(ENABLE_SD_CARD)
                 } else {
                     if (data == '\r' || data == '\n') {
@@ -235,7 +238,7 @@ bool is_realtime_command(uint8_t data) {
     if (data >= 0x80) {
         return true;
     }
-    auto cmd = static_cast<Cmd>(data);
+    auto cmd = static_cast<Cmd>(data);  //C++的强制类型转static_cast，将data从uint8_t转为Cmd类型
     return cmd == Cmd::Reset || cmd == Cmd::StatusReport || cmd == Cmd::CycleStart || cmd == Cmd::FeedHold;
 }
 
